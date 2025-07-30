@@ -1,0 +1,17 @@
+class Solution:
+    def getKthFromLast(self, head, n):
+        first = head
+        second = head
+
+
+        for _ in range(n):
+            if not first:
+                return -1  
+            first = first.next
+
+    
+        while first:
+            first = first.next
+            second = second.next
+
+        return second.data if second else -1
